@@ -52,3 +52,13 @@ Date:   Tue Jul 1 20:39:14 2025 +0300
 Файл HEAD (англ. «голова», «головной») — один из служебных файлов папки .git. Он указывает на коммит, который сделан последним (то есть на самый новый).  
 Если нужно передать последний коммит, то вместо его хеша можно передать HEAD, например, git reset HEAD.  
 
+## Жизненный цикл файла в Git  
+```mermaid
+graph LR;
+  untracked -- "git add ." --> staged;
+  staged    -- "git commit -m <description>"     --> tracked/comitted;
+  modified -- "git add ." --> staged;
+  staged    -- "git commit -m <description of changes>"     --> tracked/comitted;
+  tracked -- "git push" --> pushed;           
+```  
+

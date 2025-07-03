@@ -56,9 +56,7 @@ Date:   Tue Jul 1 20:39:14 2025 +0300
 ```mermaid
 graph LR;
   untracked -- "git add ." --> staged;
-  staged    -- "git commit -m <description>"     --> tracked/comitted;
-  modified -- "git add ." --> staged;
-  staged    -- "git commit -m <description of changes>"     --> tracked/comitted;
-  tracked -- "git push" --> pushed;           
+  staged    -- "git commit -m <description>"     --> tracked/comitted -- "git push" --> pushed;
+  modified -- "git add ." --> staged;    
 ```  
 
